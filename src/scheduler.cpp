@@ -8,9 +8,14 @@
 #include <queue>
 #include "scheduler.hpp"
 
+/**
+ * credit to niranjan for the idea to only run on small cores!!
+ * we will not be keeping this logic forever, just for tinkering and data collection purposes
+ */
+
 std::queue<ProcessId_t> readyQ;
 const int NUM_CORES = 4;
-const int OFFSET = 4; // running on the latter 4 cores (the smaller ones)
+const int OFFSET = 4; // running on the latter 4 cores (the smaller ones) 
 ProcessId_t running[8] = {InvalidProcessId(), InvalidProcessId(), InvalidProcessId(), InvalidProcessId(), 
                           InvalidProcessId(), InvalidProcessId(), InvalidProcessId(), InvalidProcessId()};
 
